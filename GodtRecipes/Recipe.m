@@ -44,10 +44,10 @@
         for (NSDictionary *ingredientDict in [recipeDict valueForKeyPath:@"ingredients.elements"]) {
             
             for (NSString *ingredientName in [ingredientDict valueForKey:@"name"]) {
-                ingredients = [NSString stringWithFormat:@"%@%@", ingredients ? ingredients : @"", ingredientName];
+                ingredients = [NSString stringWithFormat:@"%@, %@",ingredients, ingredientName];
             }
         }
-        
+        ingredients = [ingredients substringFromIndex:2]; //trim first 2 chars
         recipe.ingredients = ingredients;
         
         // Image
