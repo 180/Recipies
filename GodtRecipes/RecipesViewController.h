@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface RecipesViewController : UITableViewController
+@interface RecipesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong) NSMutableArray *recipies;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

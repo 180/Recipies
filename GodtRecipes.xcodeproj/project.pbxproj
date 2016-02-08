@@ -14,6 +14,8 @@
 		4EE76C891C68DCBA00667960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EE76C881C68DCBA00667960 /* Assets.xcassets */; };
 		4EE76C8C1C68DCBA00667960 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE76C8A1C68DCBA00667960 /* LaunchScreen.storyboard */; };
 		4EE76C951C68E32D00667960 /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE76C941C68E32D00667960 /* RecipesViewController.m */; };
+		4EE76C9A1C68E56E00667960 /* Recipe+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE76C971C68E56E00667960 /* Recipe+CoreDataProperties.m */; };
+		4EE76C9B1C68E56E00667960 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE76C991C68E56E00667960 /* Recipe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		4EE76C8D1C68DCBA00667960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EE76C931C68E32D00667960 /* RecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipesViewController.h; sourceTree = "<group>"; };
 		4EE76C941C68E32D00667960 /* RecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesViewController.m; sourceTree = "<group>"; };
+		4EE76C961C68E56E00667960 /* Recipe+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Recipe+CoreDataProperties.h"; path = "GodtRecipes/Recipe+CoreDataProperties.h"; sourceTree = "<group>"; };
+		4EE76C971C68E56E00667960 /* Recipe+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Recipe+CoreDataProperties.m"; path = "GodtRecipes/Recipe+CoreDataProperties.m"; sourceTree = "<group>"; };
+		4EE76C981C68E56E00667960 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Recipe.h; path = GodtRecipes/Recipe.h; sourceTree = "<group>"; };
+		4EE76C991C68E56E00667960 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Recipe.m; path = GodtRecipes/Recipe.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 		4EE76C781C68DCBA00667960 /* GodtRecipes */ = {
 			isa = PBXGroup;
 			children = (
+				4EE76C9C1C68E57800667960 /* Model */,
 				4EE76C7C1C68DCBA00667960 /* AppDelegate.h */,
 				4EE76C7D1C68DCBA00667960 /* AppDelegate.m */,
 				4EE76C821C68DCBA00667960 /* Main.storyboard */,
@@ -80,6 +87,18 @@
 				4EE76C7A1C68DCBA00667960 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4EE76C9C1C68E57800667960 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4EE76C961C68E56E00667960 /* Recipe+CoreDataProperties.h */,
+				4EE76C991C68E56E00667960 /* Recipe.m */,
+				4EE76C971C68E56E00667960 /* Recipe+CoreDataProperties.m */,
+				4EE76C981C68E56E00667960 /* Recipe.h */,
+			);
+			name = Model;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,9 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EE76C871C68DCBA00667960 /* GodtRecipes.xcdatamodeld in Sources */,
+				4EE76C9B1C68E56E00667960 /* Recipe.m in Sources */,
 				4EE76C7E1C68DCBA00667960 /* AppDelegate.m in Sources */,
 				4EE76C951C68E32D00667960 /* RecipesViewController.m in Sources */,
 				4EE76C7B1C68DCBA00667960 /* main.m in Sources */,
+				4EE76C9A1C68E56E00667960 /* Recipe+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
