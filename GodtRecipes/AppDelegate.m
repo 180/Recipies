@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ConnectionHelper.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    if ([ConnectionHelper connected]) {
+        [self clearCoreData];
+    }
+    
     return YES;
 }
 
@@ -49,6 +54,18 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
+- (void)clearCoreData {
+    _persistentStoreCoordinator = [self persistentStoreCoordinator];
+    _managedObjectContext = [self managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Recipe"];
+    NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
+    
+    NSError *deleteError = nil;
+    [_persistentStoreCoordinator executeRequest:delete withContext:_managedObjectContext error:&deleteError];
+    
+}
 
 - (NSURL *)applicationDocumentsDirectory {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "MS.GodtRecipes" in the application's documents directory.

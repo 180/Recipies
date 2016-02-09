@@ -7,6 +7,7 @@
 //
 
 #import "RecipesViewController.h"
+#import "ConnectionHelper.h"
 #import "Recipe.h"
 #import "RecipeCell.h"
 
@@ -26,7 +27,9 @@ static NSString *kCellId = @"RecipeCell";
     UINib *cellNib = [UINib nibWithNibName:kCellId bundle:nil];
     [self.tableView registerNib:cellNib forCellReuseIdentifier:kCellId];
     
-    [Recipe fetchRecipies];
+    if ([ConnectionHelper connected]) {
+        [Recipe fetchRecipies];
+    }
     [self showData];
 }
 
