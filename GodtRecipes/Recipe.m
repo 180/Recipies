@@ -35,19 +35,20 @@
     for (NSDictionary *recipeDict in resultDict) {
         Recipe *recipe = [NSEntityDescription insertNewObjectForEntityForName:@"Recipe" inManagedObjectContext:context];
         recipe.title = [recipeDict valueForKey:@"title"];
-        recipe.desc = [recipeDict valueForKey:@"description"];
-        
+        recipe.desc = [self stringByStrippingHTML:[recipeDict valueForKey:@"description"]];
         
         // Ingredients
-        NSString *ingredients = @"";
+        NSString *ingredients = @"Ingredients:";
         
         for (NSDictionary *ingredientDict in [recipeDict valueForKeyPath:@"ingredients.elements"]) {
             
             for (NSString *ingredientName in [ingredientDict valueForKey:@"name"]) {
-                ingredients = [NSString stringWithFormat:@"%@, %@",ingredients, ingredientName];
+                ingredients = [NSString stringWithFormat:@"%@ %@,",ingredients, ingredientName];
             }
         }
-        ingredients = [ingredients substringFromIndex:2]; //trim first 2 chars
+        
+        ingredients = [ingredients substringToIndex:[ingredients length] - 1]; // Remove comma at the end of the list.
+        
         recipe.ingredients = ingredients;
         
         // Image
@@ -60,6 +61,15 @@
     
     NSError *saveError = nil;
     [context save:&saveError];
+}
+
++ (NSString *)stringByStrippingHTML:(NSString *)s {
+    NSRange r;
+    
+    while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        s = [s stringByReplacingCharactersInRange:r withString:@""];
+    
+    return s;
 }
 
 @end
