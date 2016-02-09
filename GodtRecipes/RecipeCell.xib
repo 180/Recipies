@@ -46,9 +46,11 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="5NL-Sm-CJ0" firstAttribute="top" secondItem="zvH-S3-TTj" secondAttribute="bottom" constant="15" id="2Io-pa-Phj"/>
+                    <constraint firstAttribute="trailing" secondItem="97l-yR-KdU" secondAttribute="trailing" constant="8" id="ETO-hN-eJ3"/>
                     <constraint firstItem="8MY-aM-WTU" firstAttribute="leading" secondItem="5NL-Sm-CJ0" secondAttribute="leading" id="FVg-Gc-nNS"/>
                     <constraint firstItem="8MY-aM-WTU" firstAttribute="trailing" secondItem="5NL-Sm-CJ0" secondAttribute="trailing" id="Iuf-1f-sbZ"/>
                     <constraint firstItem="zvH-S3-TTj" firstAttribute="leading" secondItem="Cau-dS-dMw" secondAttribute="leading" id="Ivl-N6-cMr"/>
+                    <constraint firstAttribute="trailing" secondItem="8MY-aM-WTU" secondAttribute="trailing" constant="8" id="Jvg-F1-T11"/>
                     <constraint firstItem="8MY-aM-WTU" firstAttribute="top" secondItem="5NL-Sm-CJ0" secondAttribute="bottom" id="K0H-s5-jkw"/>
                     <constraint firstItem="97l-yR-KdU" firstAttribute="trailing" secondItem="8MY-aM-WTU" secondAttribute="trailing" id="Pus-v1-ayq"/>
                     <constraint firstItem="zvH-S3-TTj" firstAttribute="top" secondItem="Cau-dS-dMw" secondAttribute="top" id="Rer-iV-bg9"/>
@@ -56,6 +58,7 @@
                     <constraint firstItem="97l-yR-KdU" firstAttribute="top" secondItem="5NL-Sm-CJ0" secondAttribute="bottom" constant="93" id="ahc-us-OjU"/>
                     <constraint firstItem="5NL-Sm-CJ0" firstAttribute="leading" secondItem="Cau-dS-dMw" secondAttribute="leadingMargin" id="fq4-oH-glt"/>
                     <constraint firstItem="5NL-Sm-CJ0" firstAttribute="trailing" secondItem="zvH-S3-TTj" secondAttribute="trailing" constant="-12" id="gLG-rv-P4a"/>
+                    <constraint firstAttribute="trailing" secondItem="5NL-Sm-CJ0" secondAttribute="trailing" constant="8" id="jU9-DS-dJ1"/>
                     <constraint firstAttribute="bottomMargin" secondItem="8MY-aM-WTU" secondAttribute="bottom" constant="67.5" id="tuI-HB-OBz"/>
                     <constraint firstAttribute="bottomMargin" secondItem="97l-yR-KdU" secondAttribute="bottom" constant="-0.5" id="vmZ-TI-anA"/>
                 </constraints>
