@@ -16,6 +16,8 @@
 		4EE76C951C68E32D00667960 /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE76C941C68E32D00667960 /* RecipesViewController.m */; };
 		4EE76C9A1C68E56E00667960 /* Recipe+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE76C971C68E56E00667960 /* Recipe+CoreDataProperties.m */; };
 		4EE76C9B1C68E56E00667960 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE76C991C68E56E00667960 /* Recipe.m */; };
+		4EE76CA81C6962F300667960 /* RecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE76CA61C6962F300667960 /* RecipeCell.m */; };
+		4EE76CA91C6962F300667960 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EE76CA71C6962F300667960 /* RecipeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,9 @@
 		4EE76C971C68E56E00667960 /* Recipe+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Recipe+CoreDataProperties.m"; path = "GodtRecipes/Recipe+CoreDataProperties.m"; sourceTree = "<group>"; };
 		4EE76C981C68E56E00667960 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Recipe.h; path = GodtRecipes/Recipe.h; sourceTree = "<group>"; };
 		4EE76C991C68E56E00667960 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Recipe.m; path = GodtRecipes/Recipe.m; sourceTree = "<group>"; };
+		4EE76CA51C6962F300667960 /* RecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCell.h; sourceTree = "<group>"; };
+		4EE76CA61C6962F300667960 /* RecipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCell.m; sourceTree = "<group>"; };
+		4EE76CA71C6962F300667960 /* RecipeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +75,9 @@
 				4EE76C7C1C68DCBA00667960 /* AppDelegate.h */,
 				4EE76C7D1C68DCBA00667960 /* AppDelegate.m */,
 				4EE76C821C68DCBA00667960 /* Main.storyboard */,
+				4EE76CA51C6962F300667960 /* RecipeCell.h */,
+				4EE76CA61C6962F300667960 /* RecipeCell.m */,
+				4EE76CA71C6962F300667960 /* RecipeCell.xib */,
 				4EE76C931C68E32D00667960 /* RecipesViewController.h */,
 				4EE76C941C68E32D00667960 /* RecipesViewController.m */,
 				4EE76C881C68DCBA00667960 /* Assets.xcassets */,
@@ -161,6 +169,7 @@
 				4EE76C8C1C68DCBA00667960 /* LaunchScreen.storyboard in Resources */,
 				4EE76C891C68DCBA00667960 /* Assets.xcassets in Resources */,
 				4EE76C841C68DCBA00667960 /* Main.storyboard in Resources */,
+				4EE76CA91C6962F300667960 /* RecipeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +186,7 @@
 				4EE76C951C68E32D00667960 /* RecipesViewController.m in Sources */,
 				4EE76C7B1C68DCBA00667960 /* main.m in Sources */,
 				4EE76C9A1C68E56E00667960 /* Recipe+CoreDataProperties.m in Sources */,
+				4EE76CA81C6962F300667960 /* RecipeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +335,7 @@
 				4EE76C921C68DCBA00667960 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

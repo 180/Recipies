@@ -8,6 +8,9 @@
 
 #import "RecipesViewController.h"
 #import "Recipe.h"
+#import "RecipeCell.h"
+
+static NSString *kCellId = @"RecipeCell";
 
 @interface RecipesViewController ()
 
@@ -15,13 +18,15 @@
 
 @implementation RecipesViewController {
     NSManagedObjectContext *_context;
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [Recipe fetchRecipies];
     
+    UINib *cellNib = [UINib nibWithNibName:kCellId bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:kCellId];
+    
+    [Recipe fetchRecipies];
     [self showData];
 }
 
@@ -38,7 +43,7 @@
     }
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Recipe"];
-    self.recipies = [[_context executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    self.recipes = [[_context executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
     [self.tableView reloadData];
 }
@@ -50,28 +55,55 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_recipies count];
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [_searchResults count];
+    } else {
+        return [_recipes count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];
+    RecipeCell *cell = (RecipeCell *)[self.tableView dequeueReusableCellWithIdentifier:kCellId];
     
-    Recipe *recipe = [_recipies objectAtIndex:indexPath.row];
+    if (cell == nil) {
+        cell = [[RecipeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellId];
+    }
     
-    UILabel *titleLabel = (UILabel *)[cell.contentView viewWithTag:1];
-    [titleLabel setText: recipe.title];
+    Recipe *recipe = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        recipe = [_searchResults objectAtIndex:indexPath.row];
+    } else {
+        recipe = [_recipes objectAtIndex:indexPath.row];
+    }
     
-    UILabel *descriptionLabel = (UILabel *)[cell.contentView viewWithTag:2];
-    [descriptionLabel setText:recipe.desc];
-    
-    UILabel *ingredientsLabel = (UILabel *)[cell.contentView viewWithTag:3];
-    [ingredientsLabel setText:recipe.ingredients];
-    
-    UIImageView *recipeImageView = (UIImageView *)[cell.contentView viewWithTag:4];
-    recipeImageView.image = [UIImage imageWithData:recipe.recipeImage];
+    cell.titleLabel.text = recipe.title;
+    cell.descriptionLabel.text = recipe.desc;
+    cell.ingredientsLabel.text = recipe.ingredients;
+    cell.recipeImageView.image = [UIImage imageWithData:recipe.recipeImage];
     
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [RecipeCell suggestedCellHeight];
+}
+
+#pragma mark - Search
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
+    NSPredicate *ingredientsPredicate = [NSPredicate predicateWithFormat:@"ingredients CONTAINS[c] %@", searchText];
+    NSPredicate *titlePredicate = [NSPredicate predicateWithFormat:@"title CONTAINS[c] %@", searchText];
+    NSPredicate *resultPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[ingredientsPredicate, titlePredicate]];
+    _searchResults = [_recipes filteredArrayUsingPredicate:resultPredicate];
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    return YES;
+}
 
 @end

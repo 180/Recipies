@@ -11,7 +11,9 @@
 
 @interface RecipesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong) NSMutableArray *recipies;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong) NSArray *recipes;
+@property (strong) NSArray *searchResults;
 
 @end
