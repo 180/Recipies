@@ -30,6 +30,7 @@ static NSString *kCellId = @"RecipeCell";
     if ([ConnectionHelper connected]) {
         [Recipe fetchRecipies];
     }
+    
     [self showData];
 }
 

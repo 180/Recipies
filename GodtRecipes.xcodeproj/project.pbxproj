@@ -81,21 +81,21 @@
 		4EE76C781C68DCBA00667960 /* GodtRecipes */ = {
 			isa = PBXGroup;
 			children = (
-				4EE76C9C1C68E57800667960 /* Model */,
 				4EE76C7C1C68DCBA00667960 /* AppDelegate.h */,
 				4EE76C7D1C68DCBA00667960 /* AppDelegate.m */,
-				4EE76C821C68DCBA00667960 /* Main.storyboard */,
-				4EE76CA51C6962F300667960 /* RecipeCell.h */,
+				4EE76C881C68DCBA00667960 /* Assets.xcassets */,
 				4EE76CAF1C69C6EC00667960 /* ConnectionHelper.h */,
 				4EE76CB01C69C6EC00667960 /* ConnectionHelper.m */,
+				4EE76C851C68DCBA00667960 /* GodtRecipes.xcdatamodeld */,
+				4EE76C8D1C68DCBA00667960 /* Info.plist */,
+				4EE76C8A1C68DCBA00667960 /* LaunchScreen.storyboard */,
+				4EE76C821C68DCBA00667960 /* Main.storyboard */,
+				4EE76C9C1C68E57800667960 /* Model */,
+				4EE76CA51C6962F300667960 /* RecipeCell.h */,
 				4EE76CA61C6962F300667960 /* RecipeCell.m */,
 				4EE76CA71C6962F300667960 /* RecipeCell.xib */,
 				4EE76C931C68E32D00667960 /* RecipesViewController.h */,
 				4EE76C941C68E32D00667960 /* RecipesViewController.m */,
-				4EE76C881C68DCBA00667960 /* Assets.xcassets */,
-				4EE76C8A1C68DCBA00667960 /* LaunchScreen.storyboard */,
-				4EE76C8D1C68DCBA00667960 /* Info.plist */,
-				4EE76C851C68DCBA00667960 /* GodtRecipes.xcdatamodeld */,
 				4EE76C791C68DCBA00667960 /* Supporting Files */,
 			);
 			path = GodtRecipes;
